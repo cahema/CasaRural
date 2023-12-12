@@ -12,16 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->primary(['user_email','room_id']);
-            $table->string('user_email');
-            $table->foreignId('room_id')->constrained()->cascadeOnDelete();
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('room_id');
             $table->string('inquiry_header');
             $table->text('inquiry_text');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->timestamps();
 
-            $table->foreign('user_email')->references('email')->on('users')->cascadeOnDelete();
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('room_id')->references('id')->on('rooms')->cascadeOnDelete();
         });
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('configs', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->text('value')->unique();
+            $table->text('value');
             $table->timestamps();
         });
     }
