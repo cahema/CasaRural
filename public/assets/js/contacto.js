@@ -8,3 +8,8 @@ function deshabilitaHabilita(radioSeleccionado) {
   let otroRadio = (radioSeleccionado.id === "radio1") ? document.getElementById("radio2") : document.getElementById("radio1");
   otroRadio.disabled = false;
 }
+
+function cambiaRadios() {
+    document.getElementById("radio1").disabled = false;
+    document.getElementById("radio2").disabled = false;
+}

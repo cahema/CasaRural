@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ConfigController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +37,8 @@ Route::get('/galeria', function() {
 Route::get('/contacto', function() {
     return view('contacto');
 });
+Route::post('/contacto', [BookingController::class, 'store']);
+
 Route::get('/login', function() {
     return view('login');
 });
@@ -46,3 +51,10 @@ Route::post('/enviarNewsletter', [NewsletterController::class, 'send']);
 Route::get('/test', function () {
    return view('Test');
 });
+
+Route::resources([
+    'roles' => RoleController::class,
+    'users' => UserController::class,
+    'bookings' => BookingController::class,
+    'configs' => ConfigController::class,
+]);
