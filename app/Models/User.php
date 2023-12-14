@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -44,6 +43,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'password' => 'hashed',
+        'newsletter' => 'boolean'
     ];
 
     public function role(): BelongsTo {
