@@ -21,6 +21,8 @@ class BookingFactory extends Factory
             'inquiry_text' => $this->faker->realTextBetween(150,250),
             'start_date' => $this->faker->dateTimeBetween('-1 month'),
             'end_date' => $this->faker->dateTimeBetween('-1 day'),
+            'accepted' => $this->faker->boolean(),
+            'hidden' => $this->faker->boolean(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

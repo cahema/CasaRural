@@ -17,11 +17,15 @@ class Booking extends Model
         'inquiry_text',
         'start_date',
         'end_date',
+        'accepted',
+        'hidden',
     ];
 
     protected $casts = [
         'start_date' => 'datetime',
         'end_date' => 'datetime',
+        'accepted' => 'boolean',
+        'hidden' => 'boolean',
     ];
 
     public function user(): BelongsTo {

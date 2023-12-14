@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('inquiry_text');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
+            $table->boolean('accepted');
+            $table->boolean('hidden');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
