@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique()->nullable(false);
             $table->string('password')->nullable();
-            $table->string('name');
-            $table->string('surname');
-            $table->string('telephone');
+            $table->string('name')->nullable();
+            $table->string('surname')->nullable();
+            $table->string('telephone')->nullable();
             $table->boolean('newsletter')->default(false);
             $table->unsignedBigInteger('role_id')->nullable();
             $table->rememberToken();
