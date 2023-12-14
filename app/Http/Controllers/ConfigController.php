@@ -2,31 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Config;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ConfigController extends Controller
 {
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function index(Request $request, string $success = "") {
+        $configs = Config::all();
+        $users = User::where('email','!=','')->get();
+
+        return view('config', ['success' => $success,'configs' => $configs, 'users' => $users]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
-    }
+        $configs = Config::all();
+        $recibidos = $request->all();
+        foreach ($configs as $config) {
+            $config->value = $recibidos[$config->id];
+            $config->save();
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return $this->index($request, "Configuración guardada con éxito");
     }
 }

@@ -37,16 +37,26 @@ Route::get('/galeria', function() {
 Route::get('/contacto', function() {
     return view('contacto');
 });
-Route::post('/contacto', [BookingController::class, 'store']);
+Route::post('/contacto',
+    [BookingController::class, 'store']
+);
 
 Route::get('/login', function() {
     return view('login');
 });
 
-Route::get('/config', function() {
-    return view('config');
-});
-Route::post('/enviarNewsletter', [NewsletterController::class, 'send']);
+Route::get('/config',
+    [ConfigController::class, 'index']
+);
+Route::post('/guardarConfiguracion',
+    [ConfigController::class, 'update']
+);
+Route::post('/enviarNewsletter',
+    [NewsletterController::class, 'send']
+);
+Route::post('/modificarEmail',
+    [UserController::class, 'update']
+);
 
 Route::get('/test', function () {
    return view('Test');

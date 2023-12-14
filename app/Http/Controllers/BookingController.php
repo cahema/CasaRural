@@ -13,7 +13,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        $valido = $request->validate([
+        $request->validate([
             'email' => 'required|max:255|email|string',
             'name' => 'required|max:255|string',
             'surname' => 'required|max:255|string',
@@ -37,7 +37,7 @@ class BookingController extends Controller
             ]);
         }
 
-        $booking = Booking::create([
+        Booking::create([
             'user_id' => $user->id,
             'inquiry_header' => $request->inquiry_header,
             'inquiry_text' => $request->inquiry_text,

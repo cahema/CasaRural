@@ -39,20 +39,16 @@
                         <form method="post" action="/guardarConfiguracion"><button class="btn btn-primary" type="submit" style="margin-bottom: 10px;">Guardar</button>
                             {{ csrf_field() }}
                             <div class="row">
+                                @foreach($configs as $config)
                                 <div class="col-md-6">
                                     <div class="card" style="margin-bottom: 25px;">
                                         <div class="card-body p-4">
-                                            <h4 class="card-title">Clave</h4><input class="form-control" type="text" name="config1">
+                                            <h4 class="card-title">{{ ucfirst($config->name) }}</h4>
+                                            <input class="form-control" type="text" name="{{ $config->id }}" value="{{ $config->value }}">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="card" style="margin-bottom: 25px;">
-                                        <div class="card-body p-4">
-                                            <h4 class="card-title">Clave</h4><input class="form-control" type="text" name="config2">
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </form>
                     </div>
@@ -72,10 +68,20 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>Email</td>
-                                                <td><button class="btn btn-primary me-0 pe-2" type="button" style="background: var(--bs-warning);" data-bs-target="#modal-editar" data-bs-toggle="modal"><i class="far fa-edit me-lg-0"></i></button><button class="btn btn-primary me-lg-0" type="button" style="margin-left: 5px;background: var(--bs-danger);" data-bs-target="#modal-borrar" data-bs-toggle="modal"><i class="far fa-trash-alt me-lg-0"></i></button></td>
-                                            </tr>
+                                            @foreach($users as $user)
+
+                                                <tr>
+                                                    <td>{{ $user->email }}</td>
+                                                    <td>
+                                                        <button onclick="editarEmail({{ $user->id }}, '{{ $user->email }}')" class="btn btn-primary me-0 pe-2" type="button" style="background: var(--bs-warning);" data-bs-target="#modal-editar" data-bs-toggle="modal">
+                                                            <i class="far fa-edit me-lg-0"></i>
+                                                        </button>
+                                                        <button onclick="borrarEmail({{ $user->id }})" class="btn btn-primary me-lg-0" type="button" style="margin-left: 5px;background: var(--bs-danger);" data-bs-target="#modal-borrar" data-bs-toggle="modal">
+                                                            <i class="far fa-trash-alt me-lg-0"></i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -89,8 +95,17 @@
                                 <div class="modal-header">
                                     <h4 class="modal-title">Modificar Email</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                                 </div>
-                                <div class="modal-body"><input type="text" class="col-12"></div>
-                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button><button class="btn btn-primary" type="button" style="background: var(--bs-warning);">Modificar</button></div>
+                                <form action="/modificarEmail" method="post">
+                                    <div class="modal-body">
+                                        <input id="idEmailModificar" name="idEmailModificar" type="hidden" value="">
+                                        <input id="emailModificar" name="emailModificar" type="text" class="col-12">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-primary" type="submit" style="background: var(--bs-warning);">Modificar</button>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                     </div>
@@ -103,7 +118,12 @@
                                 <div class="modal-body">
                                     <p>Esto borrará este email, ¿estás seguro?</p>
                                 </div>
-                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button><button class="btn btn-primary" type="button" style="background: var(--bs-danger);">Borrar</button></div>
+                                <form action="/borrarEmail" method="post"></form>
+                                <input id="idEmailBorrar" name="idEmailBorrar" type="hidden" value="">
+                                <div class="modal-footer">
+                                    <button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                    <button class="btn btn-primary" type="submit" style="background: var(--bs-danger);">Borrar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,6 +158,7 @@
 </main>
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/config.js') }}"></script>
 </body>
 
 </html>
