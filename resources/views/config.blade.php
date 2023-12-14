@@ -36,7 +36,8 @@
                 <div class="tab-pane active" role="tabpanel" id="tab-1" style="margin-top: 10px;">
                     <h4 style="margin-left: 25px;">Pares de clave-valor de configuración</h4>
                     <div style="margin-right: 50px;margin-left: 50px;">
-                        <form method="post" action="/guardarConfiguracion"><button class="btn btn-primary" type="submit" style="margin-bottom: 10px;">Guardar</button>
+                        <form method="post" action="/guardarConfiguracion">
+                            <button class="btn btn-primary" type="submit" style="margin-bottom: 10px;">Guardar</button>
                             {{ csrf_field() }}
                             <div class="row">
                                 @foreach($configs as $config)
@@ -60,7 +61,8 @@
                             <div class="row d-flex justify-content-center">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
-                                        <table class="table">
+                                        <input type="text" id="emailBuscar" onkeyup="filtrarEmails()" placeholder="Buscar emails">
+                                        <table id="tablaEmails" class="table">
                                             <thead>
                                             <tr>
                                                 <th class="col-8 col-md-10">Email</th>
@@ -96,6 +98,7 @@
                                     <h4 class="modal-title">Modificar Email</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                                 </div>
                                 <form action="/modificarEmail" method="post">
+                                    {{ csrf_field() }}
                                     <div class="modal-body">
                                         <input id="idEmailModificar" name="idEmailModificar" type="hidden" value="">
                                         <input id="emailModificar" name="emailModificar" type="text" class="col-12">
@@ -118,12 +121,14 @@
                                 <div class="modal-body">
                                     <p>Esto borrará este email, ¿estás seguro?</p>
                                 </div>
-                                <form action="/borrarEmail" method="post"></form>
-                                <input id="idEmailBorrar" name="idEmailBorrar" type="hidden" value="">
-                                <div class="modal-footer">
-                                    <button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button>
-                                    <button class="btn btn-primary" type="submit" style="background: var(--bs-danger);">Borrar</button>
-                                </div>
+                                <form action="/borrarEmail" method="post">
+                                    {{ csrf_field() }}
+                                    <input id="idEmailBorrar" name="idEmailBorrar" type="hidden" value="">
+                                    <div class="modal-footer">
+                                        <button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-primary" type="submit" style="background: var(--bs-danger);">Borrar</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

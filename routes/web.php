@@ -57,14 +57,10 @@ Route::post('/enviarNewsletter',
 Route::post('/modificarEmail',
     [UserController::class, 'update']
 );
+Route::post('/borrarEmail',
+    [UserController::class, 'destroy']
+);
 
 Route::get('/test', function () {
    return view('Test');
 });
-
-Route::resources([
-    'roles' => RoleController::class,
-    'users' => UserController::class,
-    'bookings' => BookingController::class,
-    'configs' => ConfigController::class,
-]);
