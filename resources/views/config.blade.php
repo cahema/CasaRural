@@ -37,6 +37,7 @@
                     <h4 style="margin-left: 25px;">Pares de clave-valor de configuración</h4>
                     <div style="margin-right: 50px;margin-left: 50px;">
                         <form method="post" action="/guardarConfiguracion"><button class="btn btn-primary" type="submit" style="margin-bottom: 10px;">Guardar</button>
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="card" style="margin-bottom: 25px;">
@@ -118,8 +119,9 @@
                                             <div class="card-body p-sm-5">
                                                 <h2 class="text-center mb-4">Enviar correos</h2>
                                                 <form method="post" action="/enviarNewsletter">
-                                                    <div class="mb-3"><input class="form-control" type="text" id="asunto" name="asunto" placeholder="Asunto"></div>
-                                                    <div class="mb-3"><textarea class="form-control" id="mensaje" name="mensaje" rows="6" placeholder="Mensaje"></textarea></div>
+                                                    {{ csrf_field() }}
+                                                    <div class="mb-3"><input class="form-control" type="text" id="asunto" name="subject" placeholder="Asunto"></div>
+                                                    <div class="mb-3"><textarea class="form-control" id="mensaje" name="message" rows="6" placeholder="Mensaje"></textarea><script src="https://htmeditor.com/js/htmeditor.min.js" htmeditor_textarea="mensaje" full_screen="no" editor_height="480" run_local="no"> </script> </div>
                                                     <div><button class="btn btn-primary d-block w-100" type="submit">Enviar</button></div>
                                                 </form>
                                             </div>
