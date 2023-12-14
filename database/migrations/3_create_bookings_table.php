@@ -14,17 +14,15 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('room_id');
             $table->string('inquiry_header');
             $table->text('inquiry_text');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
-            $table->boolean('accepted');
-            $table->boolean('hidden');
+            $table->dateTime('start_date')->nullable();
+            $table->dateTime('end_date')->nullable();
+            $table->boolean('accepted')->default(0);
+            $table->boolean('hidden')->default(0);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
-            $table->foreign('room_id')->references('id')->on('rooms')->cascadeOnDelete();
         });
     }
 

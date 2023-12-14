@@ -31,7 +31,7 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'surname' => fake()->lastName(),
             'telephone' => fake()->phoneNumber(),
-            'newsletter' => fake()->boolean(),
+            'newsletter' => /*fake()->boolean()*/ false,
             'role_id' => fake()->randomElement(Role::all()),
             'remember_token' => Str::random(10),
             'created_at' => Carbon::now(),

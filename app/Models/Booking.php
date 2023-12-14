@@ -11,8 +11,7 @@ class Booking extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_email',
-        'room_id',
+        'user_id',
         'inquiry_header',
         'inquiry_text',
         'start_date',
@@ -30,9 +29,5 @@ class Booking extends Model
 
     public function user(): BelongsTo {
         return $this->belongsTo(User::class);
-    }
-
-    public function room(): BelongsTo {
-        return $this->belongsTo(Room::class);
     }
 }

@@ -16,7 +16,6 @@ class BookingFactory extends Factory
     {
         return [
             'user_id' => $this->faker->randomElement(User::all()),
-            'room_id' => $this->faker->randomElement(Room::all()),
             'inquiry_header' => $this->faker->realTextBetween(50, 100),
             'inquiry_text' => $this->faker->realTextBetween(150,250),
             'start_date' => $this->faker->dateTimeBetween('-1 month'),
