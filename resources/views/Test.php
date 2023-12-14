@@ -6,10 +6,10 @@
     use App\Models\Room;
     use App\Models\User;
 
-    $test = Room::find(1)->bookings;
+    $tests = User::find(1);
 
-    foreach ($test as $booking) {
-        print("<pre>".print_r($booking->id,true)."</pre>");
+    foreach ($tests as $test) {
+        print("<pre>".print_r($test->id,true)."</pre>");
     }
 
 ?>
