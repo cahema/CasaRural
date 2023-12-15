@@ -66,6 +66,10 @@
                                 <div class="col-md-12">
                                     <div class="table-responsive">
                                         <input type="text" id="emailBuscar" onkeyup="filtrarEmails()" placeholder="Buscar emails">
+                                        <button class="btn btn-primary bg-success me-0 pe-2" type="button" data-bs-target="#modal-nuevo" data-bs-toggle="modal">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#ffffff" d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM200 344V280H136c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H248v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+                                            Nuevo Usuario
+                                        </button>
                                         <table id="tablaEmails" class="table">
                                             <thead>
                                             <tr>
@@ -136,6 +140,35 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-nuevo">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Nuevo Usuario</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <form method="post" action="/nuevoUsuario">
+                                    <div class="modal-body">
+                                        {{ csrf_field() }}
+                                        <div class="mb-3"><label class="form-label" for="name">Nombre</label><input class="form-control" type="text" id="name" name="name" data-bs-theme="light"></div>
+                                        <div class="mb-3"><label class="form-label" for="surname">Apellidos</label><input class="form-control" type="text" id="surname" name="surname" data-bs-theme="light"></div>
+                                        <div class="mb-3"><label class="form-label" for="telephone">Teléfono</label><input class="form-control" type="text" id="telephone" name="telephone" data-bs-theme="light"></div>
+                                        <div class="mb-3"><label class="form-label" for="email">Email</label><input class="form-control" type="email" id="email" name="email" data-bs-theme="light"></div>
+                                        <div class="mb-3"><label class="form-label" for="password">Contraseña</label><input class="form-control" type="password" id="password" name="password" data-bs-theme="light"></div>
+                                        <div>
+                                            <div class="form-check"><input value="2" class="form-check-input" type="checkbox" id="admin" name="role"><label class="form-check-label" for="formCheck-1">¿Es administrador?</label></div>
+                                        </div>
+                                        <div>
+                                            <div class="form-check"><input value="1" class="form-check-input" type="checkbox" id="newsletter" checked name="newsletter"><label class="form-check-label" for="formCheck-1">¿Suscrito a la Newsletter?</label></div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-light" type="button" data-bs-dismiss="modal">Cancelar</button>
+                                        <button class="btn btn-primary" type="submit" style="background: var(--bs-success);">Crear</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="tab-pane" role="tabpanel" id="tab-3" style="margin-top: 10px;">
                     <h4 style="margin-left: 25px;">Enviar correo a los escritos a la newsletter</h4>
@@ -146,7 +179,7 @@
                                     <div class="col-md-8">
                                         <div class="card">
                                             <div class="card-body p-sm-5">
-                                                <h2 class="text-center mb-4">Enviar correos</h2>
+                                                <h2 class="text-center mb-4">Enviar Newsletter</h2>
                                                 <form method="post" action="/enviarNewsletter">
                                                     {{ csrf_field() }}
                                                     <div class="mb-3"><input class="form-control" type="text" id="asunto" name="subject" placeholder="Asunto"></div>

@@ -66,6 +66,9 @@ Route::post('/modificarEmail',
 Route::post('/borrarEmail',
     [UserController::class, 'destroy']
 )->middleware('auth');
+Route::post('/nuevoUsuario',
+    [UserController::class, 'store']
+)->middleware('auth');
 
 Route::get('/test', function () {
    return view('Test');

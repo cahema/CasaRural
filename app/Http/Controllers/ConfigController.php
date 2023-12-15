@@ -10,7 +10,7 @@ class ConfigController extends Controller
 {
     public function index(Request $request, string $success = "") {
         $configs = Config::all();
-        $users = User::where('email','!=','')->get();
+        $users = User::where('email','!=','')->where('newsletter', 1)->get();
 
         return view('config', ['success' => $success,'configs' => $configs, 'users' => $users]);
     }

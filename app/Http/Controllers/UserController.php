@@ -4,23 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $user = User::where('email', $request->email)->first();
+        if($user === null) {
+            User::create([
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'name' => $request->name,
+                'surname' => $request->surname,
+                'telephone' => $request->telephone,
+                'newsletter' => empty($request->newsletter) ? 0 : 1,
+                'role_id' => empty($request->role) ? 1 : 2,
+            ]);
+
+            return redirect('/config');
+        }
     }
 
     /**

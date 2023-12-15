@@ -1,0 +1,8 @@
+El repositorio es: https://github.com/cahema/CasaRural
+
+El usuario admin por defecto es:
+usuario: xchermar478@ieshnosmachado.org
+contraseña: admin
+
+Usar el siguiente comando para iniciar la BBDD:
+php artisan migrate:fresh --seed --force

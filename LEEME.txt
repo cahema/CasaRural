@@ -1,4 +1,1 @@
-El usuario admin por defecto es:
-usuario: xchermar478@ieshnosmachado.org
-contraseña: admin
-
+Todos los archivos de documentación están en la carpeta docs
