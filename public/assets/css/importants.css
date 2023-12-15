@@ -6,3 +6,7 @@
   opacity: 1 !important;
 }
 
+.carousel-item > img {
+    width: 1300px !important;
+    height: 800px !important;
+}

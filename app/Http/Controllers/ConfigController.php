@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Config;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 class ConfigController extends Controller
 {
-    public function index(Request $request, string $success = "") {
+    public function index() {
         $configs = Config::all();
         $users = User::where('email','!=','')->where('newsletter', 1)->get();
+        try {
+            $success = session()->get('success');
+        } catch (Exception $e) {
+            $success = null;
+        }
 
         return view('config', ['success' => $success,'configs' => $configs, 'users' => $users]);
     }
@@ -24,6 +32,6 @@ class ConfigController extends Controller
             $config->save();
         }
 
-        return $this->index($request, "Configuración guardada con éxito");
+        return redirect('/config')->with('success', ['mensaje' => 'Configuración guardada con éxito', 'tab' => '#tab-1']);
     }
 }

@@ -18,6 +18,6 @@ class NewsletterController extends Controller
             Mail::to($user)->send(new NewsletterMail($request->subject, $request->message));
         }
 
-        return redirect('/config');
+        return redirect('/config')->with('success', ['mensaje' => 'Newsletter enviada con éxito', 'tab' => '#tab-3']);
     }
 }

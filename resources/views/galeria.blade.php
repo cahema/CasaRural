@@ -39,27 +39,27 @@
         <div class="container">
             <div class="carousel slide" data-bs-ride="carousel" id="carousel1">
                 <div class="carousel-inner">
-                    <div class="carousel-item active"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/237/700/300"></div>
-                    <div class="carousel-item"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/238/700/300"></div>
-                    <div class="carousel-item"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/239/700/300"></div>
+                    <div class="carousel-item active"><img class="w-100 d-block" alt="Slide Image" src="https://www.tuscasasrurales.com/img/605x/casas-rurales.jpg"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" alt="Slide Image" src="https://saikarural.com/wp-content/uploads/casa-saika-rural-entrada.jpg"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" alt="Slide Image" src="https://bedandrestmagazine.es/wp-content/uploads/2019/02/casa-rural.jpg"></div>
                 </div>
                 <div><a class="carousel-control-prev" href="#carousel1" role="button" data-bs-slide="prev"><span aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel1" role="button" data-bs-slide="next"><span aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
                 <div class="carousel-indicators"><button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button></div>
             </div>
             <div class="carousel slide" data-bs-ride="carousel" id="carousel2" style="display: none">
                 <div class="carousel-inner">
-                    <div class="carousel-item active"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/240/700/300"></div>
-                    <div class="carousel-item"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/241/700/300"></div>
-                    <div class="carousel-item"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/242/700/300"></div>
+                    <div class="carousel-item active"><img class="w-100 d-block" alt="Slide Image" src="https://www.escapadarural.com/blog/wp-content/uploads/2015/05/la-tor-1.jpg"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" alt="Slide Image" src="https://www.escapadarural.com/blog/wp-content/uploads/2016/05/Mar-de-la-Carrasca1-1024x682.jpg"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" alt="Slide Image" src="https://i0.wp.com/anautrilla.com/wp-content/uploads/2020/03/nidosdecarnota-casarural-conencanto-romantico-paraparejas-ejemplo-estrategias-interiorismo-anautrilla_5.jpg?resize=1200%2C800&ssl=1"></div>
                 </div>
                 <div><a class="carousel-control-prev" href="#carousel2" role="button" data-bs-slide="prev"><span aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel2" role="button" data-bs-slide="next"><span aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
                 <div class="carousel-indicators"><button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2"></button></div>
             </div>
             <div class="carousel slide" data-bs-ride="carousel" id="carousel3" style="display: none">
                 <div class="carousel-inner">
-                    <div class="carousel-item active"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/243/700/300"></div>
-                    <div class="carousel-item"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/244/700/300"></div>
-                    <div class="carousel-item"><img class="w-100 d-block w-100" alt="Slide Image" src="https://picsum.photos/id/236/700/300"></div>
+                    <div class="carousel-item active"><img class="w-100 d-block" alt="Slide Image" src="https://fotos.viajescanariasrural.com/68/g/casa_la_palma_puntagorda_lp1181_636959752539076855.jpg"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" alt="Slide Image" src="https://media-cdn.tripadvisor.com/media/photo-s/04/b8/c7/eb/casa-rural-la-majada.jpg"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" alt="Slide Image" src="https://www.jardinesdelrobledo.com/wp-content/uploads/2014/02/casa-rural50.jpg"></div>
                 </div>
                 <div><a class="carousel-control-prev" href="#carousel3" role="button" data-bs-slide="prev"><span aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel3" role="button" data-bs-slide="next"><span aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
                 <div class="carousel-indicators"><button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel3" data-bs-slide-to="2"></button></div>

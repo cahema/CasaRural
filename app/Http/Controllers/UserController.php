@@ -22,7 +22,7 @@ class UserController extends Controller
                 'role_id' => empty($request->role) ? 1 : 2,
             ]);
 
-            return redirect('/config');
+            return redirect('/config')->with('success', ['mensaje' => 'Usuario creado con éxito', 'tab' => '#tab-2']);
         }
     }
 
@@ -35,7 +35,7 @@ class UserController extends Controller
         $user->email = $request->emailModificar;
         $user->save();
 
-        return redirect('/config');
+        return redirect('/config')->with('success', ['mensaje' => 'Email modificado con éxito', 'tab' => '#tab-2']);
     }
 
     /**
@@ -48,6 +48,6 @@ class UserController extends Controller
         $user->newsletter = false;
         $user->save();
 
-        return redirect('/config');
+        return redirect('/config')->with('success', ['mensaje' => 'Email borrado con éxito', 'tab' => '#tab-2']);
     }
 }

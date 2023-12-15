@@ -38,11 +38,11 @@
                 <h2 class="text-info" style="text-align: center;margin-top: 50px;">Casa rural Cahema</h2>
                 <div class="carousel slide" data-bs-ride="carousel" id="carousel" style="text-align: left;height: auto;">
                     <div class="carousel-inner">
-                        <div class="carousel-item active"><img class="w-100 d-block" src="https://picsum.photos/id/237/700/300" alt="Slide Image"></div>
-                        <div class="carousel-item"><img class="w-100 d-block" src="https://picsum.photos/id/238/700/300" alt="Slide Image"></div>
-                        <div class="carousel-item"><img class="w-100 d-block" src="https://picsum.photos/id/239/700/300" alt="Slide Image"></div>
-                        <div class="carousel-item"><img class="w-100 d-block" src="https://picsum.photos/id/240/700/300" alt="Slide Image"></div>
-                        <div class="carousel-item"><img class="w-100 d-block" src="https://picsum.photos/id/241/700/300" alt="Slide Image"></div>
+                        <div class="carousel-item active"><img class="w-100 d-block" src="https://cdn.turisapps.com/site-2585/083c0480-65c8-4aa2-bd40-41efd69b51eb/main.webp" alt="Slide Image"></div>
+                        <div class="carousel-item"><img class="w-100 d-block" src="https://www.turismoruralnavarra.com/wp-content/uploads/2020/02/001-reserva-casa-rural-en-navarra-turismo-rural-aroxtegi-baztan-bidasoa-sunbilla.jpg" alt="Slide Image"></div>
+                        <div class="carousel-item"><img class="w-100 d-block" src="https://www.huescalamagia.es/blog/wp-content/uploads/2016/12/casasordesa2.jpeg" alt="Slide Image"></div>
+                        <div class="carousel-item"><img class="w-100 d-block" src="https://i1.wp.com/www.noticiasturismorural.es/wp-content/uploads/2016/01/PV6-lurdeia-bermeo-euskadi.jpg?resize=640%2C377&ssl=1" alt="Slide Image"></div>
+                        <div class="carousel-item"><img class="w-100 d-block" src="https://hips.hearstapps.com/hmg-prod/images/20220121-filipe-pina-david-bilo-casa-na-mora-guarda-078-compressed-1656688658.jpg" alt="Slide Image"></div>
                     </div>
                     <div><a class="carousel-control-prev" href="#carousel" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
                     <div class="carousel-indicators"><button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button> <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button> <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button> <button type="button" data-bs-target="#carousel" data-bs-slide-to="3"></button> <button type="button" data-bs-target="#carousel" data-bs-slide-to="4"></button></div>
@@ -54,13 +54,13 @@
         <div class="container" style="padding: 0 0 50px;">
             <div class="block-heading" style="padding: 20px 0 0;">
                 <h2 class="text-info">Información</h2>
-                <p class="parrafoAncho">Nuestra casa rural tiene 30 camas en 15 habitaciones, además nuestras instalaciones incluyen:</p>
+                <p class="parrafoAncho">Nuestra casa rural tiene 10 camas en 4 habitaciones, además nuestras instalaciones incluyen:</p>
             </div>
             <ul style="max-width: 500px;margin: auto;">
-                <li>Piscina 500m2</li>
+                <li>Piscina 20m2</li>
                 <li>Jardines</li>
-                <li>Curso golf</li>
-                <li>Aparcamiento</li>
+                <li>Garaje</li>
+                <li>Unas vistas preciosas</li>
             </ul>
         </div>
     </section>

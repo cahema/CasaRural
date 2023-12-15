@@ -53,7 +53,7 @@ Route::get('/logout',
 
 Route::get('/config',
     [ConfigController::class, 'index']
-)->middleware('auth');
+)->middleware('auth')->name('/config');
 Route::post('/guardarConfiguracion',
     [ConfigController::class, 'update']
 )->middleware('auth');
