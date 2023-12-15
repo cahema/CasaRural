@@ -32,7 +32,7 @@ class UserFactory extends Factory
             'surname' => fake()->lastName(),
             'telephone' => fake()->phoneNumber(),
             'newsletter' => /*fake()->boolean()*/ false,
-            'role_id' => fake()->randomElement(Role::all()),
+            'role_id' => /*fake()->randomElement(Role::all())*/ 1,
             'remember_token' => Str::random(10),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

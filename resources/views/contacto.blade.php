@@ -1,3 +1,7 @@
+@php
+    use App\Models\Config;
+@endphp
+
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -20,6 +24,10 @@
                 <li class="nav-item"><a class="nav-link" href="/facebook">Posts de Facebook</a></li>
                 <li class="nav-item"><a class="nav-link" href="/galeria">Galería</a></li>
                 <li class="nav-item"><a class="nav-link active" href="/contacto">Contacto y reservas</a></li>
+                @auth
+                    <li class="nav-item"><a class="nav-link" href="/config">Config</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                @endauth
             </ul>
         </div>
     </div>
@@ -66,7 +74,9 @@
                     <div class="block-heading" style="padding-top: 40px; margin-left: 170px;">
                         <h2 class="text-info">Calendario</h2>
                     </div>
-                    <div style="margin-top: 25px;"><iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FMadrid&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&showTz=1&hl=es&src=Y19kMmY1NzE3YTQ5MmMxZTYwM2RkOWUzNGU2ODFkMTNjYjY1NDI3ODg4YjViYjcwNTIwZDFlZTA5ZDJkYWU0ZTYzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23795548" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe></div>
+                    <div style="margin-top: 25px;">
+                        <iframe src="https://calendar.google.com/calendar/embed?src={{ Config::where('name', 'ID Google Calendar')->first()->value }}&ctz=Europe%2FMadrid" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </div>
                 </div>
             </div>
         </div>

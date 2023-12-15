@@ -21,19 +21,25 @@
                 <li class="nav-item"><a class="nav-link active" href="/facebook">Posts de Facebook</a></li>
                 <li class="nav-item"><a class="nav-link" href="/galeria">Galería</a></li>
                 <li class="nav-item"><a class="nav-link" href="/contacto">Contacto y reservas</a></li>
+                @auth
+                    <li class="nav-item"><a class="nav-link" href="/config">Config</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                @endauth
             </ul>
         </div>
     </div>
 </nav>
-<main class="page">
-    <section class="clean-block features">
-        <div class="container">
-            <div class="block-heading">
+<main style="height: 100%" class="page">
+    <section style="height: 100%" class="clean-block features">
+        <div style="height: 100%" class="container">
+            <div style="height: 100%" class="block-heading">
                 <h2 class="text-info">Posts de nuestro Facebook</h2>
-                <div class="row">
-                    <div class="col"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fposts%2Fpfbid02qGrz1AaPPcDmPJjUc7mboPGU71vP3YS6gMfnmkR5U6cqkmWZ8BvhmpPGWnoM6WRul&amp;show_text=true&amp;width=350" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media" width="350" height="320"></iframe></div>
-                    <div class="col"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fposts%2Fpfbid0hLenLM2GfseV1km4CaCEQriUCJicXJJsiPYKgkuTqruPn6WNFUuexo65TnMD4QsJl&amp;width=350" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media" width="350" height="320"></iframe></div>
-                    <div class="col"><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fposts%2Fpfbid06fsk8pqqXimRpEVhogbbFsduayxTMu3hp6iLwcTwWkySse2EFNYqxpsjXvM9zqKxl&amp;width=350" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media" width="350" height="320"></iframe></div>
+                <div style="height: 100%" class="row">
+                    <div style="height: 100%" class="col">
+                        <p style="text-align: center; opacity: 1; height: 100%">
+                            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FGoogle&width=500&colorscheme=light&show_faces=true&border_color&stream=true&header=true&height=800" scrolling="yes" style="border:none; overflow:hidden; width:500px; height: 100%; background: white; float:left; " allowtransparency="true" frameborder="0"></iframe>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -20,6 +20,10 @@
                 <li class="nav-item"><a class="nav-link" href="/facebook">Posts de Facebook</a></li>
                 <li class="nav-item"><a class="nav-link" href="/galeria">Galería</a></li>
                 <li class="nav-item"><a class="nav-link" href="/contacto">Contacto y reservas</a></li>
+                @auth
+                    <li class="nav-item"><a class="nav-link" href="/config">Config</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                @endauth
             </ul>
         </div>
     </div>

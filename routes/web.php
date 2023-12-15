@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ConfigController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,26 +41,32 @@ Route::post('/contacto',
     [BookingController::class, 'store']
 );
 
-Route::get('/login', function() {
-    return view('login');
-});
+Route::get('/login',
+    [LoginController::class, 'index']
+)->name('login');
+Route::post('/login',
+    [LoginController::class, 'authenticate']
+);
+Route::get('/logout',
+    [LoginController::class, 'logout']
+)->middleware('auth');
 
 Route::get('/config',
     [ConfigController::class, 'index']
-);
+)->middleware('auth');
 Route::post('/guardarConfiguracion',
     [ConfigController::class, 'update']
-);
+)->middleware('auth');
 Route::post('/enviarNewsletter',
     [NewsletterController::class, 'send']
-);
+)->middleware('auth');
 Route::post('/modificarEmail',
     [UserController::class, 'update']
-);
+)->middleware('auth');
 Route::post('/borrarEmail',
     [UserController::class, 'destroy']
-);
+)->middleware('auth');
 
 Route::get('/test', function () {
    return view('Test');
-});
+})->middleware('auth');
