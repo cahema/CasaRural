@@ -185,4 +185,5 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'maps_api' => env('GOOGLE_MAPS_API'),
 ];

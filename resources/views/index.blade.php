@@ -67,7 +67,7 @@
     <section class="clean-block features" style="padding: 0;">
         <div class="container">
             <div class="block-heading" style="padding: 0;">
-                <h2 class="text-info">Localización</h2><iframe allowfullscreen="" frameborder="0" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key={{ Config::where('name', 'Api Key Maps')->first()->value }}&amp;q=Sevilla&amp;zoom=11" width="100%" height="800"></iframe>
+                <h2 class="text-info">Localización</h2><iframe allowfullscreen="" frameborder="0" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key={{ config('app.maps_api') }}&amp;q=Sevilla&amp;zoom=11" width="100%" height="800"></iframe>
             </div>
         </div>
     </section>
