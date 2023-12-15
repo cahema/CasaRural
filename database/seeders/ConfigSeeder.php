@@ -23,5 +23,12 @@ class ConfigSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
+
+        DB::table('configs')->insert([
+            'name' => 'Correo de notificaciones',
+            'value' => 'xchermar478@ieshnosmachado.org',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
     }
 }
